@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --base-clr: #11121a;
+    --line-clr: #42434a;
+    --hover-clr: #222533;
+    --text-clr: #e6e6ef;
+    --accent-clr: #5e63ff;
+    --secondary-text-clr: #b0b3c1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    line-height: 2.5em;
+    padding-left: 40px;
+}
+
+li {
+    list-style: none;
+    padding: 1px 4px;
+}
+
+html {
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5rem;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100dvh;
+    background-color: var(--base-clr);
+    color: var(--text-clr);
+}
+
+.wrapper {
+    margin: 40px;
+}
+
+.wrapper > h1 {
+    margin-bottom: 30px;
+}
+
+.dir-structure {
+    max-width: max-content;
+    max-height: max-content;
+    background-color: var(--hover-clr);
+    padding: 30px;
+    border-radius: 20px;
+    /* overflow: auto; */
+}
+
+#dir-root > span {
+    cursor: pointer;
+
+    color: var(--accent-clr);
+}
+
+.tree .dir-name {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.tree .dir-name button {
+    cursor: pointer;
+    color: var(--accent-clr);
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    font: inherit;
+    gap: 5px;
+    border-radius: 5px;
+
+    svg {
+        /* fill does not have to be declared, its color inherited from button */
+        /* fill: var(--text-clr); */
+    }
+
+    .icon-closed {
+        display: block;
+    }
+
+    .icon-closed.hide {
+        display: none;
+    }
+
+    .icon-open {
+        display: none;
+    }
+
+    .icon-open.show {
+        display: block;
+    }
+}
+
+.tree .dir-content {
+    display: none;
+    position: relative;
+
+    /* select li which does not have child element div */
+    li:not(:has(> div)) {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+}
+
+.tree .dir-content.show {
+    display: block;
+}
+
+ul li {
+    position: relative;
+    
+    span {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
+
+ul li::before {
+    position: absolute;
+    left: -15px;
+    top: 0;
+    border-left: 2px solid var(--line-clr);
+    border-bottom: 2px solid var(--line-clr);
+    content: '';
+    height: 20px;
+    width: 8px;
+}
+
+ul li::after {
+    position: absolute;
+    left: -15px;
+    bottom: 0;
+    border-left: 2px solid var(--line-clr);
+    content: '';
+    height: 100%;
+    width: 8px;
+}
+
+ul li:last-child::after {
+    display: none;
+}
