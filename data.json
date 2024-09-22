@@ -1,0 +1,35 @@
+{
+    "items": [
+        {
+            "First folder": [
+                {
+                    "First folder": [
+                        {
+                            "First folder": [
+                                "First file", 
+                                "Second file"
+                            ]
+                        },
+                        {
+                            "Second folder": [
+                                "First file", 
+                                "Second file"
+                            ]
+                        },
+                        "First file"
+                    ]
+                },
+                "First file", 
+                "Second file"
+            ]
+        },
+        {
+            "Second folder": [
+                {
+                    "First folder": ["First file", "Second file"]
+                },
+                "First file"
+            ]
+        }
+    ] 
+}
