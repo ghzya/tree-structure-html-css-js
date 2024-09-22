@@ -5,6 +5,6 @@
 - Button to handle directory content to show and hide
 - svg for the icon downloaded from [google icon](https://fonts.google.com/icons)
 - Using javascript to:
-    - Generate nested list structure
+    - Generate nested list structure from json
     - Handle show and hide all directory content, 
     - Switch directory icon when the directory is open and closed
